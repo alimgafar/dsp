@@ -69,7 +69,9 @@ This "changes directory" and makes the named directory our new working
 directory. 
 
 > Question: How could we make sure that we moved?
+
 You can check by typing the command to find the current working directory
+
 ``` bash
 pwd
 ```
@@ -107,7 +109,7 @@ In the terminal, if there's output from a program, it prints in the terminal
 itself. This is called "standard out" or `Stdout` for short. Let's use a
 command to write our own text to standard out.
 
-```bash
+``` bash
 echo "HELLO WORLD"
 ```
 
@@ -115,7 +117,7 @@ That command tells the terminal to write out anything we put after the `echo`
 to standard out. If we want it to not go to standard out, we have to tell it
 where to go instead. 
 
-```bash
+``` bash
 echo "HELLO WORLD" > test_file.txt
 ```
 
@@ -137,7 +139,7 @@ time.
 Let's get a bit fancier and load in a dataset. Let's pull it from the internet
 using `curl`.
 
-```bash
+``` bash
 curl https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data
 ```
 
@@ -150,19 +152,25 @@ Nice.
 > Let's save the output of the `curl` command to a file called `data.txt`. How
 would we do that?
 
+By redirecting the output using the '>' symbol. 
+
+``` bash
+curl https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data > data.txt
+```
+
 Now that we have the data file, let's learn how to manipulate files.
 
 ### Copying, Moving, and Removing Files
 
 Let's start out by seeing what's in our working directory.
 
-```bash
+``` bash
 ls
 ```
 
 Now let's make a copy of the data file
 
-```bash
+``` bash
 cp data.txt data2.txt
 ls
 ```
@@ -171,7 +179,7 @@ Now we have two copies of the data file! Nice. How do we know which came
 first? Let's get a bit fancier with our `ls` command and include a special
 flag.
 
-```bash
+``` bash
 ls -l
 ```
 
@@ -191,17 +199,18 @@ Permissions   Owner            Group  File   Last         File name
 Mostly, we'll care about things like file size (in bytes) and modified date.
 We can get even fancier by adding a second flag
 
-```bash
+``` bash
 ls -lh
 ```
 
 > What changed?
+
 The file size column displays the size by an appropriate unit
 
 If instead copying we just want to change the name of a file, we can do:
 
 
-```bash
+``` bash
 mv data2.txt NEW_FILE_NAME.txt
 ls
 ```
@@ -209,7 +218,7 @@ ls
 There's no need to keep two of the same file, so let's go ahead and delete the
 one we just renamed.
 
-```bash
+``` bash
 rm NEW_FILE_NAME.txt
 ls
 ```
@@ -217,7 +226,7 @@ ls
 Now let's try to make and copy a directory to see how things change when we
 aren't working with solo files anymore.
 
-```bash
+``` bash
 mkdir test_directory
 cp test_directory test_directory2
 ls
@@ -239,7 +248,7 @@ If we want to delete a whole directory, we have to do exactly the same thing.
 directory, so it will only delete whole directories if you give it a proper
 flag.
 
-```basg
+``` basg
 rm -r test_directory
 rm -r test_directory2
 ls
@@ -266,7 +275,7 @@ it to look into a set of text and find all the lines that have the word
 "honda" it would then print just those lines. We can combine that with our
 dataset by doing:
 
-```bash
+``` bash
 cat data.txt | grep "honda"
 ```
 
@@ -276,7 +285,7 @@ for searching through files and finding how our data looks.
 
 `grep` can also work by just looking into the files themselves like so:
 
-```bash
+``` bash
 grep "honda" data.txt
 ```
 
@@ -306,7 +315,7 @@ And a wildcard like `*.py` would match:
 
 I can also use this logic with something like `grep`
 
-```bash
+``` bash
 grep "honda" *
 ```
 which will search every file in this directory for the string "honda".
@@ -326,7 +335,7 @@ can immediately see that our dataset has 398 rows.
 
 Finally, the last very useful piece of command line is `which`. Try
 
-```bash
+``` bash
 which python
 ```
 
@@ -335,7 +344,7 @@ installed both python 3 and python 2, you could type `which python` and see
 whether the command `python` was associated with python 3 or python 2. This
 works on any executable. Try also:
 
-```bash
+``` bash
 which grep
 ```
 and it will show you where `grep` is installed on your system.
