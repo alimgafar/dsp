@@ -17,7 +17,7 @@ command line today. Note that this exercise assumes you are working from top
 to bottom and some code may require previous steps. Also anything that looks
 like this:
 
-```bash
+``` bash
 laa-dee-da
 ```
 
@@ -29,7 +29,7 @@ Start by opening the `terminal` program on your computer. When this opens, you
 will start out in a place known as the `HOME` directory. This is a different
 place for every user. Let's figure out where we are for each of you. 
 
-```bash
+``` bash
 pwd
 ```
 
@@ -41,7 +41,7 @@ new file, it would show up in our **working directory**.
 That's handy, but we don't want to be stuck in our home directory. So let's
 make our own directory to start practicing with.
 
-```bash
+``` bash
 mkdir test_directory
 ```
 
@@ -49,7 +49,7 @@ This is going to "make directory" and call it `test_directory`. We've told the
 command line we want a new folder called `test_directory` and it's made it for
 us. Let's make sure it's there.
 
-```bash
+``` bash
 ls
 ```
 
@@ -61,7 +61,7 @@ That's neat. However, we want to be able to do more than create folders, we
 want to use them. So let's make that folder our new working directory by
 moving the terminal into it. 
 
-```bash
+``` bash
 cd test_directory
 ```
 
@@ -69,6 +69,10 @@ This "changes directory" and makes the named directory our new working
 directory. 
 
 > Question: How could we make sure that we moved?
+You can check by typing the command to find the current working directory
+``` bash
+pwd
+```
 
 Let's get a few special things out of the way as well for command line. When
 we talk about folders, we don't always want to move "into" the next folder
@@ -192,6 +196,7 @@ ls -lh
 ```
 
 > What changed?
+The file size column displays the size by an appropriate unit
 
 If instead copying we just want to change the name of a file, we can do:
 
